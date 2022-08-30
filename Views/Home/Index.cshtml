@@ -1,0 +1,24 @@
+﻿@model IEnumerable<desafio_mvc.Models.Receita>
+
+<div class="container">
+    <div class="grid uk-margin-small-top">
+        <div class="uk-width-1-2 uk-margin-small-bottom">
+            <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                @foreach (var item in Model)
+                {
+                    <div class="uk-card-media-left uk-cover-container">
+                        <img src="https://placehold.co/250" alt="" uk-cover>
+                    </div>
+                    @* <div class="uk-card-body">
+                        <h3 class="uk-card-title">@item.IngredienteReceitas.</h3>
+                        <p>@Html.DisplayFor(modelItem => item.Nome)</p>
+                        <button class="btn btn-primary">
+                        <span class="uk-icon uk-margin-small-right" uk-icon="icon: cart"></span>
+                        Adicionar
+                        </button>
+                        </div> *@
+                }
+            </div>
+        </div>
+    </div>
+</div>

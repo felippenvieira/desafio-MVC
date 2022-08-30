@@ -1,0 +1,51 @@
+@model desafio_mvc.Models.Receita
+
+@{
+    Layout = "_LayoutAdmin";
+}
+
+<h1 class="display-4">Nova Receita</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" placeholder="Ex.: Bolo de cenoura" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="UrlImagem" class="control-label"></label>
+                <input asp-for="UrlImagem" class="form-control" placeholder="Ex.: www.googleimagem.com/bolo">
+                <span asp-validation-for="UrlImagem" class="text-danger"></span>
+                <br>
+            </div>
+            <div>
+                <label asp-for="Ingredientes">Ingredientes</label>
+                <select class="form-control" asp-for="Ingredientes" asp-items="ViewBag.Ingredientes"></select>
+                <span asp-validation-for="Ingredientes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TempoPreparo" class="control-label"></label>
+                <input asp-for="TempoPreparo" class="form-control" placeholder="Ex.: 25 minutos" />
+                <span asp-validation-for="TempoPreparo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModoPreparo" class="control-label"></label>
+                <input asp-for="ModoPreparo" class="form-control"
+                    placeholder="Ex.: Adicione 5 colheres de sopa de cacau em pó" />
+                <span asp-validation-for="ModoPreparo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ADICIONAR" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-primary">VOLTAR</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

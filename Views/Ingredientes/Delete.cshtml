@@ -1,0 +1,24 @@
+@model desafio_mvc.Models.Ingrediente
+
+@{
+    Layout = "_LayoutAdmin";
+}
+
+<h4>Tem certeza que quer deletar esse ingrediente?</h4>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="APAGAR" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-primary">VOLTAR</a>
+    </form>
+</div>
